@@ -5,6 +5,7 @@ import {
     Route
 } from "react-router-dom";
 import Home from "./Components/Home/Home/Home";
+import Dashboard from "./Components/Dashboard/Dashboard/Dashboard";
 
 function App() {
     return (
@@ -12,6 +13,9 @@ function App() {
             <Switch>
                 <Route exact path="/">
                     <Home></Home>
+                </Route>
+                <Route path="/dashboard">
+                    <Dashboard></Dashboard>
                 </Route>
             </Switch>
         </Router>
