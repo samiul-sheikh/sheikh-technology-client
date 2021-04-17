@@ -9,6 +9,8 @@ import Dashboard from "./Components/Dashboard/Dashboard/Dashboard";
 import AddServices from './Components/Dashboard/AddServices/AddServices';
 import AddReview from './Components/Dashboard/AddReview/AddReview';
 import AdminPanel from './Components/Dashboard/AdminPanel/AdminPanel';
+import ServiceOrder from './Components/ServiceOrder/ServiceOrder';
+
 
 function App() {
     return (
@@ -28,6 +30,9 @@ function App() {
                 </Route>
                 <Route path="/addAdmin">
                     <AdminPanel></AdminPanel>
+                </Route>
+                <Route path="/service/:id">
+                    <ServiceOrder></ServiceOrder>
                 </Route>
             </Switch>
         </Router>
