@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import Sidebar from '../Sidebar/Sidebar';
@@ -6,6 +7,21 @@ const AddServices = () => {
 
     const { register, handleSubmit, errors } = useForm();
     const onSubmit = data => console.log(data);
+
+    const handleImageUpload = service => {
+        console.log(service.target.files[0]);
+        const imageData = new FormData();
+        imageData.set('key', 'b8a0776f79e4a37c3c341318f0f61e22')
+        imageData.append('image', service.target.files[0]);
+
+        axios.post('https://api.imgbb.com/1/upload', imageData)
+            .then(function (response) {
+                console.log(response.data.data.display_url);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    }
 
     return (
         <section className="container-fluid row">
@@ -30,7 +46,7 @@ const AddServices = () => {
                     </div>
                     <div className="form-group mb-3">
                         <label for="exampleInputImage" class="form-label">Service Image</label>
-                        <input type="file" ref={register({ required: true })} name="image" placeholder="Upload an Image" className="form-control" />
+                        <input onChange={handleImageUpload} type="file" ref={register({ required: true })} name="image" placeholder="Upload an Image" className="form-control" />
                         {errors.image && <span className="text-danger">This field is required</span>}
                     </div>
                     <div className="form-group d-grid mx-auto">
