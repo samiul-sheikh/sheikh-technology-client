@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import Home from "./Components/Home/Home/Home";
 import Dashboard from "./Components/Dashboard/Dashboard/Dashboard";
+import AddServices from './Components/Dashboard/AddServices/AddServices';
 
 function App() {
     return (
@@ -16,6 +17,9 @@ function App() {
                 </Route>
                 <Route path="/dashboard">
                     <Dashboard></Dashboard>
+                </Route>
+                <Route path="/addService">
+                    <AddServices></AddServices>
                 </Route>
             </Switch>
         </Router>

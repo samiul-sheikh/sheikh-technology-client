@@ -24,7 +24,7 @@ const Sidebar = () => {
                     </Link>
                 </li>
                 <li>
-                    <Link to="/service" className="text-white text-decoration-none">
+                    <Link to="/addService" className="text-white text-decoration-none">
                         <FontAwesomeIcon icon={faPlusCircle} /> <span>Add Service</span>
                     </Link>
                 </li>
