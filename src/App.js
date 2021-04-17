@@ -7,6 +7,7 @@ import {
 import Home from "./Components/Home/Home/Home";
 import Dashboard from "./Components/Dashboard/Dashboard/Dashboard";
 import AddServices from './Components/Dashboard/AddServices/AddServices';
+import AddReview from './Components/Dashboard/AddReview/AddReview';
 
 function App() {
     return (
@@ -20,6 +21,9 @@ function App() {
                 </Route>
                 <Route path="/addService">
                     <AddServices></AddServices>
+                </Route>
+                <Route path="/addReview">
+                    <AddReview></AddReview>
                 </Route>
             </Switch>
         </Router>
