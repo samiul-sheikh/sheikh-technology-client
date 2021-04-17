@@ -19,7 +19,12 @@ const Sidebar = () => {
                     </Link>
                 </li>
                 <li>
-                    <Link to="/admin" className="text-white text-decoration-none">
+                    <Link to="/addReview" className="text-white text-decoration-none">
+                        <FontAwesomeIcon icon={faPlusCircle} /> <span>Add Review</span>
+                    </Link>
+                </li>
+                <li>
+                    <Link to="/addAdmin" className="text-white text-decoration-none">
                         <FontAwesomeIcon icon={faUserPlus} /> <span>Make Admin</span> 
                     </Link>
                 </li>
