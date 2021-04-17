@@ -11,14 +11,13 @@ const AddServices = () => {
     const onSubmit = data => {
 
         const serviceData = {
-            service: data.service,
+            service: data.title,
             description: data.description,
             price: data.price,
             imageURL: imageURL
         };
 
         const url = `http://localhost:8000/addService`;
-        // console.log(serviceData)
 
         fetch(url, {
             method: 'POST',
@@ -53,7 +52,7 @@ const AddServices = () => {
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="form-group mb-3">
                         <label for="exampleInputService" class="form-label">Service Title</label>
-                        <input type="text" ref={register({ required: true })} name="service" placeholder="Enter Title" className="form-control" />
+                        <input type="text" ref={register({ required: true })} name="title" placeholder="Enter Title" className="form-control" />
                         {errors.service && <span className="text-danger">This field is required</span>}
                     </div>
                     <div className="form-group mb-3">
