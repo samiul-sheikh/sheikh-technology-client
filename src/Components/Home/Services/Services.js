@@ -7,8 +7,8 @@ const Services = () => {
 
     useEffect(() => {
         fetch('http://localhost:8000/services')
-        .then(res => res.json())
-        .then(data => setServices(data))
+            .then(res => res.json())
+            .then(data => setServices(data))
     }, [])
 
     return (
@@ -18,7 +18,7 @@ const Services = () => {
                 <h5>services we provide</h5>
             </div>
             <div className="d-flex justify-content-center">
-                <div className="w-75 row mt-3" style={{border: "1px solid green"}}>
+                <div className="w-75 row mt-3" style={{ border: "1px solid green" }}>
                     {
                         services.map(service => <ServiceDetail service={service}></ServiceDetail>)
                     }
