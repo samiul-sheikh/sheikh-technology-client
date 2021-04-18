@@ -11,7 +11,7 @@ const ServiceOrder = () => {
     const [orderService, setOrderService] = useState({});
 
     useEffect(() => {
-        fetch('http://localhost:8000/service/' + id)
+        fetch('https://sb-technologies.herokuapp.com/service/' + id)
             .then(res => res.json())
             .then(data => setOrderService(data))
     }, [id])
@@ -19,7 +19,7 @@ const ServiceOrder = () => {
     // send order services information in server
     const handleOrder = () => {
         const newOrder = { ...loggedInUser, ...orderService }
-        fetch('http://localhost:8000/addOrder', {
+        fetch('https://sb-technologies.herokuapp.com/addOrder', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(newOrder)

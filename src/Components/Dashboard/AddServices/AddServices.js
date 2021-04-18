@@ -17,7 +17,7 @@ const AddServices = () => {
             image: imageURL
         };
 
-        const url = `http://localhost:8000/addService`;
+        const url = `https://sb-technologies.herokuapp.com/addService`;
 
         fetch(url, {
             method: 'POST',

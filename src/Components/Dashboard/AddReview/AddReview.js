@@ -17,7 +17,7 @@ const AddReview = () => {
             image: imageURL
         };
 
-        const url = `http://localhost:8000/addReview`;
+        const url = `https://sb-technologies.herokuapp.com/addReview`;
 
         fetch(url, {
             method: 'POST',

@@ -13,7 +13,7 @@ const AdminPanel = () => {
             email: data.email
         };
 
-        const url = `http://localhost:8000/addAdmin`;
+        const url = `https://sb-technologies.herokuapp.com/addAdmin`;
 
         fetch(url, {
             method: 'POST',

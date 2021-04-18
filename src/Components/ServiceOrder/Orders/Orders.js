@@ -9,7 +9,7 @@ const Orders = () => {
 
     // display ordered services for all user
     useEffect(() => {
-        fetch('http://localhost:8000/orders')
+        fetch('https://sb-technologies.herokuapp.com/orders')
             .then(res => res.json())
             .then(data => setOrders(data));
     }, [])
