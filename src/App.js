@@ -9,10 +9,12 @@ import Dashboard from "./Components/Dashboard/Dashboard/Dashboard";
 import AddServices from './Components/Dashboard/AddServices/AddServices';
 import AddReview from './Components/Dashboard/AddReview/AddReview';
 import AdminPanel from './Components/Dashboard/AdminPanel/AdminPanel';
-import ServiceOrder from './Components/ServiceOrder/ServiceOrder';
+import ServiceOrder from './Components/ServiceOrder/ServiceOrder/ServiceOrder';
 import Login from './Components/Login/Login/Login';
 import { createContext, useState } from 'react';
 import PrivateRoute from './Components/Login/PrivateRoute/PrivateRoute';
+import Orders from './Components/ServiceOrder/Orders/Orders';
+
 
 export const UserContext = createContext();
 
@@ -38,6 +40,9 @@ function App() {
                     </Route>
                     <Route path="/addAdmin">
                         <AdminPanel></AdminPanel>
+                    </Route>
+                    <Route path="/orders">
+                        <Orders></Orders>
                     </Route>
                     <PrivateRoute path="/service/:id">
                         <ServiceOrder></ServiceOrder>

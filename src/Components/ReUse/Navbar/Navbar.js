@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { UserContext } from '../../../App';
 
 const Navbar = () => {
+
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
     return (
 
@@ -28,9 +31,14 @@ const Navbar = () => {
                         <li className="nav-item">
                             <Link to="/contact" className="nav-link me-5" as={Link}>Contact us</Link>
                         </li>
-                        <li className="nav-item">
-                            <Link to="/login" className="nav-link me-5" as={Link}>Login</Link>
-                        </li>
+                        {loggedInUser.email ?
+                            <li className="nav-item">
+                                <Link to="/login" className="nav-link me-5" as={Link}>{loggedInUser.email}</Link>
+                            </li> :
+                            <li className="nav-item">
+                                <Link to="/login" className="nav-link me-5" as={Link}>Login</Link>
+                            </li>
+                        }
                     </ul>
                 </div>
             </div>
