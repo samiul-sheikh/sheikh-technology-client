@@ -26,7 +26,7 @@ const Projects = () => {
                 <h2>Our Project</h2>
                 <h5>Here some of our successful projects</h5>
             </div>
-            <div className="row mt-3" style={{ border: "1px solid green" }}>
+            <div className="row mt-3">
                 {
                     projectData.map(project => <ProjectDetail project={project}></ProjectDetail>)
                 }

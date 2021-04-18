@@ -31,7 +31,7 @@ const Footer = () => {
     ]
 
     return (
-        <footer className="mt-5" style={{border: "1px solid blue"}}>
+        <footer className="mt-5" style={{backgroundColor: 'antiquewhite'}}>
             <div className="container pt-1">
                 <div className="row py-5">
                     <FooterCol key={1} menuTitle={"Web Design"} menuItems={webDesign} />

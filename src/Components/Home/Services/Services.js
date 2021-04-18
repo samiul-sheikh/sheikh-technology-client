@@ -18,7 +18,7 @@ const Services = () => {
                 <h5>services we provide</h5>
             </div>
             <div className="d-flex justify-content-center">
-                <div className="w-75 row mt-3" style={{ border: "1px solid green" }}>
+                <div className="w-75 row mt-3">
                     {
                         services.map(service => <ServiceDetail service={service}></ServiceDetail>)
                     }

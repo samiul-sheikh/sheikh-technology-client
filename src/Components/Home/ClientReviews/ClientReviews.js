@@ -12,8 +12,8 @@ const ClientReviews = () => {
     }, [])
 
     return (
-        <section className="container" style={{ border: '1px solid red' }}>
-            <div className="">
+        <section className="container">
+            <div className="shadow-lg p-3 mb-5 bg-body rounded">
                 <div className="text-primary text-center">
                     <h1>Client Reviews</h1>
                 </div>

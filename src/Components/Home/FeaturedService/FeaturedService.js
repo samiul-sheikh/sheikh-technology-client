@@ -2,8 +2,8 @@ import React from 'react';
 import teamwork from '../../../images/teamwork.jpg';
 const FeaturedService = () => {
     return (
-        <section className="features-service pb-0 pb-md-5 my-5" style={{border: '1px solid blue'}}>
-            <div className="container mb-5">
+        <section className="features-service pb-0 pb-md-5 my-5">
+            <div className="container mb-5 shadow-lg p-3 mb-5 bg-body rounded">
                 <div className="row mb-3">
                     <div className="col-md-5 mb-4 m-md-0">
                         <img className="img-fluid" src={teamwork} alt="" />
