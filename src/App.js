@@ -10,32 +10,44 @@ import AddServices from './Components/Dashboard/AddServices/AddServices';
 import AddReview from './Components/Dashboard/AddReview/AddReview';
 import AdminPanel from './Components/Dashboard/AdminPanel/AdminPanel';
 import ServiceOrder from './Components/ServiceOrder/ServiceOrder';
+import Login from './Components/Login/Login/Login';
+import { createContext, useState } from 'react';
+import PrivateRoute from './Components/Login/PrivateRoute/PrivateRoute';
 
+export const UserContext = createContext();
 
 function App() {
+
+    const [loggedInUser, setLoggedInUser] = useState({});
+
     return (
-        <Router>
-            <Switch>
-                <Route exact path="/">
-                    <Home></Home>
-                </Route>
-                <Route path="/dashboard">
-                    <Dashboard></Dashboard>
-                </Route>
-                <Route path="/addService">
-                    <AddServices></AddServices>
-                </Route>
-                <Route path="/addReview">
-                    <AddReview></AddReview>
-                </Route>
-                <Route path="/addAdmin">
-                    <AdminPanel></AdminPanel>
-                </Route>
-                <Route path="/service/:id">
-                    <ServiceOrder></ServiceOrder>
-                </Route>
-            </Switch>
-        </Router>
+        <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
+            <Router>
+                <Switch>
+                    <Route exact path="/">
+                        <Home></Home>
+                    </Route>
+                    <Route path="/dashboard">
+                        <Dashboard></Dashboard>
+                    </Route>
+                    <Route path="/addService">
+                        <AddServices></AddServices>
+                    </Route>
+                    <Route path="/addReview">
+                        <AddReview></AddReview>
+                    </Route>
+                    <Route path="/addAdmin">
+                        <AdminPanel></AdminPanel>
+                    </Route>
+                    <PrivateRoute path="/service/:id">
+                        <ServiceOrder></ServiceOrder>
+                    </PrivateRoute>
+                    <Route path="/login">
+                        <Login></Login>
+                    </Route>
+                </Switch>
+            </Router>
+        </UserContext.Provider>
     );
 }
 

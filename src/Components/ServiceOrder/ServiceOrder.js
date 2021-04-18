@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { UserContext } from '../../App';
 
 const ServiceOrder = () => {
 
     const { id } = useParams();
     console.log(id);
 
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const [orderService, setOrderService] = useState({});
 
     useEffect(() => {
@@ -17,7 +19,8 @@ const ServiceOrder = () => {
     return (
         <div className="text-center">
             <h2>Order Service</h2>
-            <img src={orderService.image} alt=""/>
+            <h3> Hello {loggedInUser.name} ! </h3>
+            <img src={orderService.image} alt="" />
             <h5>{orderService.title}</h5>
             <p>{orderService.price}</p>
         </div>
