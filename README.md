@@ -6,15 +6,21 @@
 - Bootstrap
 - React JS
 - React Router
+- React Hook Form
+- Firebase Authentication
 - FontAwesomeIcon
 ---
 ## :link: [See live project here](https://sheikh-technologies.web.app/)
 
 ---
 ### `Project Features`
-1. professional looks UI design.
-2. set up private route, without Login user can not take a service.
-3. when users click take service, route will be changed dynamically and go to order service page.
-4. From Dashboard admin option users can add a new service or delete a service and add an admin. all information are store in database.
-5. Full Responsive website for web and mobile devices.
-6. Complete all requirements and added extra feature project section.
+- professional looks UI design.
+- Full Stack technology service providing based react application.
+- Users can take services after login with valid google account.
+- Users view their all taking services in dashboard order list.
+- Users can give review from dashboard add review option which dynamically display in homepage.
+- Same Dashboard of different kinds of features for admin and users.
+- Only valid admin can make another admin, add /delete service, all users order services.
+
+### `Server Side Repository`
+https://github.com/samiul-sheikh/sheikh-technology-server
