@@ -50,7 +50,7 @@ const Sidebar = () => {
                         </Link>
                     </li>
                     <li>
-                        <Link to="/services" className="text-white text-decoration-none">
+                        <Link to="/allServices" className="text-white text-decoration-none">
                             <FontAwesomeIcon icon={faBorderAll} /> <span>Manage Services</span>
                         </Link>
                     </li>
