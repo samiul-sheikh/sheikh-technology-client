@@ -8,7 +8,7 @@ const ManageService = () => {
     const [allServices, setAllServices] = useState([]);
 
     useEffect(() => {
-        fetch('https://sb-technologies.herokuapp.com/services')
+        fetch('http://sb-technologies.herokuapp.com/services')
             .then(res => res.json())
             .then(data => setAllServices(data))
     }, [])
