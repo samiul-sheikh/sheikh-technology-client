@@ -15,7 +15,9 @@ const ServiceDetail = ({ service }) => {
     return (
         <div className="col-md-4 text-center py-3">
             <div className="card" style={{ width: '18rem' }}>
-                <img src={image} className="card-img-top" style={{ height: '200px' }} alt="..." />
+                <div className="overflow">
+                    <img src={image} className="card-img-top" style={{ height: '200px' }} alt="..." />
+                </div>
                 <div className="card-body">
                     <h5 className="card-title">{title}</h5>
                     <p className="card-text">{description}</p>
