@@ -11,6 +11,7 @@ import { createContext, useState } from 'react';
 import PrivateRoute from './Components/Login/PrivateRoute/PrivateRoute';
 import Orders from './Components/ServiceOrder/Orders/Orders';
 import ManageService from './Components/Dashboard/ManageService/ManageService';
+import Navbar from './Components/ReUse/Navbar/Navbar';
 
 
 export const UserContext = createContext();
@@ -20,39 +21,44 @@ function App() {
     const [loggedInUser, setLoggedInUser] = useState({});
 
     return (
-        <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
-            <Router>
-                <Switch>
-                    <Route exact path="/">
-                        <Home></Home>
-                    </Route>
-                    <PrivateRoute path="/dashboard">
-                        <Dashboard></Dashboard>
-                    </PrivateRoute>
-                    <Route path="/addService">
-                        <AddServices></AddServices>
-                    </Route>
-                    <Route path="/addReview">
-                        <AddReview></AddReview>
-                    </Route>
-                    <Route path="/addAdmin">
-                        <AdminPanel></AdminPanel>
-                    </Route>
-                    <Route path="/allServices">
-                        <ManageService></ManageService>
-                    </Route>
-                    <Route path="/orders">
-                        <Orders></Orders>
-                    </Route>
-                    <PrivateRoute path="/service/:id">
-                        <ServiceOrder></ServiceOrder>
-                    </PrivateRoute>
-                    <Route path="/login">
-                        <Login></Login>
-                    </Route>
-                </Switch>
-            </Router>
-        </UserContext.Provider>
+        <>
+            <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
+                <Router>
+                    <Navbar></Navbar>
+                    <div className="pages">
+                        <Switch>
+                            <Route exact path="/">
+                                <Home></Home>
+                            </Route>
+                            <PrivateRoute path="/dashboard">
+                                <Dashboard></Dashboard>
+                            </PrivateRoute>
+                            <Route path="/addService">
+                                <AddServices></AddServices>
+                            </Route>
+                            <Route path="/addReview">
+                                <AddReview></AddReview>
+                            </Route>
+                            <Route path="/addAdmin">
+                                <AdminPanel></AdminPanel>
+                            </Route>
+                            <Route path="/allServices">
+                                <ManageService></ManageService>
+                            </Route>
+                            <Route path="/orders">
+                                <Orders></Orders>
+                            </Route>
+                            <PrivateRoute path="/service/:id">
+                                <ServiceOrder></ServiceOrder>
+                            </PrivateRoute>
+                            <Route path="/login">
+                                <Login></Login>
+                            </Route>
+                        </Switch>
+                    </div>
+                </Router>
+            </UserContext.Provider>
+        </>
     );
 }
 

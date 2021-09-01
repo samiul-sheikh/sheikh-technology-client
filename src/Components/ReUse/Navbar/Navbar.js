@@ -1,48 +1,55 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
 import { UserContext } from '../../../App';
+import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import './Navbar.css';
 
 const Navbar = () => {
+
+    const [click, setClick] = useState(false);
+
+    const handleClick = () => setClick(!click);
 
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
     return (
+        <>
+            <nav className="navbar">
+                <div className="nav-container">
+                    <NavLink exact to="/" className="nav-logo">Sheikh Technology <i className="fas fa-code" /></NavLink>
 
-        <nav className="navbar navbar-expand-lg navbar-light">
-            <div className="container-fluid">
-                <a className="navbar-brand" href="/">Sheikh Technology</a>
-                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
-                <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul className="navbar-nav ms-auto">
+                    <ul className={click ? "nav-menu active" : "nav-menu"}>
                         <li className="nav-item">
-                            <Link to="/" className="nav-link me-5" as={Link}>Home</Link>
+                            <NavLink exact to="/" activeClassName="active" className="nav-links" onClick={handleClick}>Home</NavLink>
                         </li>
                         <li className="nav-item">
-                            <Link to="/service" className="nav-link me-5" as={Link}>Services</Link>
+                            <NavLink exact to="/service0" activeClassName="active" className="nav-links" onClick={handleClick}>Service</NavLink>
                         </li>
                         <li className="nav-item">
-                            <Link to="/review" className="nav-link me-5" as={Link}>Reviews</Link>
+                            <NavLink exact to="/review" activeClassName="active" className="nav-links" onClick={handleClick}>Review</NavLink>
                         </li>
                         <li className="nav-item">
-                            <Link to="/dashboard" className="nav-link me-5" as={Link}>Dashboard</Link>
+                            <NavLink exact to="/dashboard" activeClassName="active" className="nav-links" onClick={handleClick}>Dashboard</NavLink>
                         </li>
                         <li className="nav-item">
-                            <Link to="/contact" className="nav-link me-5" as={Link}>Contact us</Link>
+                            <NavLink exact to="/contact" activeClassName="active" className="nav-links" onClick={handleClick}>Contact Us</NavLink>
                         </li>
                         {loggedInUser.email ?
+
                             <li className="nav-item">
-                                <Link to="/login" className="nav-link me-5" as={Link}>{loggedInUser.email}</Link>
+                                <NavLink exact to="/login" activeClassName="active" className="nav-links" onClick={handleClick}>{loggedInUser.email}</NavLink>
                             </li> :
                             <li className="nav-item">
-                                <Link to="/login" className="nav-link me-5" as={Link}>Login</Link>
+                                <NavLink exact to="/login" activeClassName="active" className="nav-links" onClick={handleClick}>Login</NavLink>
                             </li>
                         }
                     </ul>
+                    <div className="nav-icon" onClick={handleClick}>
+                        <i className={click ? "fas fa-times" : "fas fa-bars"} />
+                    </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
+        </>
     );
 };
 
